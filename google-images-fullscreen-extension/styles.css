@@ -1,0 +1,95 @@
+#gifsfp-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 2147483646 !important;
+  background: rgba(0, 0, 0, 0.96) !important;
+  display: none;
+  align-items: center !important;
+  justify-content: center !important;
+  pointer-events: none !important;
+}
+
+#gifsfp-overlay.gifsfp-visible {
+  display: flex !important;
+}
+
+#gifsfp-image {
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.8) !important;
+  pointer-events: none !important;
+}
+
+#gifsfp-status {
+  position: fixed !important;
+  left: 16px !important;
+  bottom: 14px !important;
+  z-index: 2147483647 !important;
+  color: rgba(255,255,255,0.72) !important;
+  font: 12px/1.4 Arial, sans-serif !important;
+  background: rgba(0,0,0,0.45) !important;
+  padding: 6px 8px !important;
+  border-radius: 6px !important;
+  pointer-events: none !important;
+}
+
+#gifsfp-close {
+  position: fixed !important;
+  top: 12px !important;
+  right: 16px !important;
+  z-index: 2147483647 !important;
+  color: rgba(255,255,255,0.8) !important;
+  font: 24px/1 Arial, sans-serif !important;
+  background: rgba(0,0,0,0.35) !important;
+  border-radius: 999px !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  user-select: none !important;
+}
+
+#gifsfp-left-hit,
+#gifsfp-right-hit {
+  position: fixed !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 18vw !important;
+  z-index: 2147483647 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+#gifsfp-left-hit { left: 0 !important; }
+#gifsfp-right-hit { right: 0 !important; }
+
+#gifsfp-left-hit::after,
+#gifsfp-right-hit::after {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  color: rgba(255,255,255,0.65) !important;
+  font: 52px/1 Arial, sans-serif !important;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.8) !important;
+  user-select: none !important;
+}
+
+#gifsfp-left-hit::after {
+  content: "‹" !important;
+  left: 24px !important;
+}
+
+#gifsfp-right-hit::after {
+  content: "›" !important;
+  right: 24px !important;
+}
+
+body.gifsfp-active {
+  overflow: hidden !important;
+}

@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Timed Site Blocker</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      width: 320px;
+      padding: 12px;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    h1 {
+      font-size: 16px;
+      margin: 0 0 10px 0;
+    }
+    .status, .panel {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+    .row {
+      margin-bottom: 10px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 13px;
+    }
+    button, select, input {
+      width: 100%;
+      padding: 8px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    .button-row {
+      display: flex;
+      gap: 8px;
+    }
+    .button-row button {
+      flex: 1;
+    }
+    .small {
+      font-size: 12px;
+      color: #444;
+      line-height: 1.35;
+    }
+  </style>
+</head>
+<body>
+  <h1>Timed Site Blocker</h1>
+
+  <div id="activeInfo" class="status">Loading...</div>
+
+  <div class="panel">
+    <div class="row">
+      <label for="siteSelect">Managed site</label>
+      <select id="siteSelect"></select>
+    </div>
+
+    <div id="siteStatus" class="status">No managed site selected.</div>
+
+    <div class="row">
+      <label for="minutes">Unblock for</label>
+      <select id="minutes">
+        <option value="5">5 minutes</option>
+        <option value="10">10 minutes</option>
+        <option value="15">15 minutes</option>
+        <option value="30">30 minutes</option>
+        <option value="60">1 hour</option>
+        <option value="120">2 hours</option>
+      </select>
+    </div>
+
+    <div class="button-row row">
+      <button id="unblockBtn">Unblock</button>
+      <button id="blockNowBtn">Block now</button>
+    </div>
+
+    <div class="row">
+      <button id="removeBtn">Remove selected site</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="row">
+      <button id="addCurrentBtn">Add current tab</button>
+    </div>
+
+    <div class="row">
+      <label for="manualHost">Or add host manually</label>
+      <input id="manualHost" type="text" placeholder="example.com">
+    </div>
+
+    <div class="row">
+      <button id="addManualBtn">Add host</button>
+    </div>
+  </div>
+
+  <div class="small">
+    Each saved host keeps its own block state, timer, and 1-hour cooldown. When allowed time expires, open tabs for that host are forced to about:blank.
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

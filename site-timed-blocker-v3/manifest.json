@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Timed Site Blocker",
+  "version": "3.0",
+  "description": "Block saved sites with timed access, relock, cooldown, and add-current-tab support.",
+  "permissions": [
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess",
+    "storage",
+    "tabs",
+    "alarms"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "action": {
+    "default_title": "Timed Site Blocker",
+    "default_popup": "popup.html"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "timed-site-blocker@local",
+      "strict_min_version": "109.0"
+    }
+  }
+}

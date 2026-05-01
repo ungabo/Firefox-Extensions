@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Site Auto Muter</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      width: 320px;
+      padding: 12px;
+      margin: 0;
+    }
+    h1 {
+      font-size: 16px;
+      margin: 0 0 10px 0;
+    }
+    .panel {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 13px;
+    }
+    .row {
+      margin-bottom: 10px;
+    }
+    input, button {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 8px;
+      font-size: 14px;
+    }
+    .host-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .host-name {
+      flex: 1;
+      overflow-wrap: anywhere;
+      font-size: 13px;
+    }
+    .host-row button {
+      width: auto;
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+    .small {
+      font-size: 12px;
+      color: #444;
+    }
+    #message {
+      min-height: 16px;
+      font-size: 12px;
+      color: #444;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Site Auto Muter</h1>
+
+  <div class="panel">
+    <div><strong>Current tab</strong></div>
+    <div id="currentHost">Loading...</div>
+    <div class="small" id="currentUrl"></div>
+  </div>
+
+  <div class="row">
+    <button id="addCurrentBtn">Add current tab</button>
+  </div>
+
+  <div class="row">
+    <input id="manualHost" type="text" placeholder="Add host manually, e.g. poki.com">
+  </div>
+
+  <div class="row">
+    <button id="addManualBtn">Add host</button>
+  </div>
+
+  <div class="row">
+    <button id="muteNowBtn">Mute current tab now</button>
+  </div>
+
+  <div class="panel">
+    <div><strong>Auto-mute list</strong></div>
+    <div id="hostList"></div>
+  </div>
+
+  <div id="message"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

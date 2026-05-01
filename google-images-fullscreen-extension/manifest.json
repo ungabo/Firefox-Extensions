@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "Google Images Fullscreen Preview",
+  "version": "1.0.4",
+  "description": "Shows selected Google Images preview images in a fullscreen overlay with a toolbar enable/disable toggle and more reliable navigation and light preloading.",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "browser_action": {
+    "default_title": "Google Images Fullscreen: Toggle"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.google.com/*",
+        "*://www.google.ca/*",
+        "*://www.google.co.uk/*",
+        "*://www.google.com.au/*"
+      ],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "applications": {
+    "gecko": {
+      "id": "google-images-fullscreen-preview@motmot.local",
+      "strict_min_version": "91.0"
+    }
+  }
+}
